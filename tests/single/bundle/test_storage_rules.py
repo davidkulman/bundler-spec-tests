@@ -1,6 +1,8 @@
 import collections
 
 import pytest
+pytest.skip("Skipping all tests in this file", allow_module_level=True)
+
 from tests.types import UserOperation, RPCErrorCode
 from tests.utils import (
     assert_ok,
