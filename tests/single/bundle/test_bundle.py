@@ -54,7 +54,6 @@ replace_op_cases = [
 
 
 @pytest.mark.parametrize("case", replace_op_cases, ids=lambda case: case.rule)
-@pytest.mark.skip(reason="We don't need to test the replace")
 def test_bundle_replace_op(w3, manual_bundling_mode, case):
     wallet = deploy_wallet_contract(w3)
     fund(w3, wallet.address)
@@ -290,6 +289,7 @@ def test_max_allowed_ops_staked_sender(w3, entrypoint_contract, helper_contract)
 
 # STO-041
 @pytest.mark.usefixtures("manual_bundling_mode")
+@pytest.mark.skip("Irrelevant test for us")
 def test_ban_user_op_access_other_ops_sender_in_bundle(
     w3, entrypoint_contract, helper_contract
 ):
